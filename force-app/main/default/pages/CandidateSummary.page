@@ -1,0 +1,18 @@
+<apex:page standardController="Candidate__c" extensions="CandidateExtension">
+    <apex:pageBlock title="Candidate Summary">
+    	<apex:pageBlockSection >
+            Name: {! Candidate__c.Name} <br/>
+            Email: {! Candidate__c.Email__c} <br/>
+            Phone: {! Candidate__c.Phone__c} <br/>
+            Status: {! Candidate__c.Status__c} <br/>
+            Active: {! Candidate__c.Active__c} <br/>
+            Position: {! Candidate__c.Position__r.Name} <br/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Parent Position">
+    	<apex:pageBlockSection >
+            {!CandidateParent.Name}
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

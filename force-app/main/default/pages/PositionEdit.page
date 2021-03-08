@@ -1,0 +1,5 @@
+<apex:page standardController="Position__c">
+    	<apex:pageBlock title="Position Summary">
+    		<apex:detail />
+    </apex:pageBlock>
+</apex:page>

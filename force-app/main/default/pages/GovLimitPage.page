@@ -1,0 +1,11 @@
+<apex:page controller="GovLimitController">
+    <apex:form >
+    	<apex:pageBlock title="Hit Governor Limit">
+            <apex:pageMessages id="shwmsg"></apex:pageMessages>
+        	Count of Campaigns : <apex:inputText value="{!campCount}"/>
+            <apex:commandButton value="Submit" action="{!hitGovLimit}"/>
+            <apex:commandButton value="SOSL limit" action="{!hitSOSLLimit}"/>
+            <apex:commandButton value="SOQL limit" action="{!hitSOQLLimit}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

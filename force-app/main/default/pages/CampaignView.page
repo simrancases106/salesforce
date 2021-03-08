@@ -1,0 +1,22 @@
+<apex:page standardController="Job_Campaign__c" recordSetVar="camps">
+  	<apex:form id="cmpvw">
+        <apex:pageBlock title="List of Job Campaigns">
+            <apex:image url="{!URLFOR($Resource.camp, 'campaign.jpg')}" height="200"/>
+            <apex:pageBlockTable id="pg1" value="{!camps}" var="c" rows="2">
+                <apex:column value="{!c.Name}"/>
+                <apex:column headerValue="Active">
+                    <apex:inputField value="{!c.Active__c}"/>
+                </apex:column>
+                <apex:column headerValue="Description">
+                    <apex:outputField value="{!c.Description__c}">
+                    	<apex:inlineEditSupport />
+                    </apex:outputField>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Previous" action="{!Previous}"/>
+            <apex:commandButton value="Next" action="{!Next}"/>
+            <apex:commandButton value="Last" action="{!Last}"/>
+        </apex:pageBlock>
+        <apex:commandButton value="Save" action="{!Quicksave}"/>
+    </apex:form>
+</apex:page>

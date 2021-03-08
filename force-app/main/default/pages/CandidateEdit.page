@@ -1,0 +1,28 @@
+<apex:page standardController="Candidate__c">
+    <apex:form id="cmpedt">
+        <apex:pageBlock title="Candidate Summary">
+            <apex:pageBlockSection >
+                Name: {! Candidate__c.Name} <br/>
+                Email: {! Candidate__c.Email__c} <br/>
+                Phone: {! Candidate__c.Phone__c} <br/>
+                Status: {! Candidate__c.Status__c} <br/>
+                Active: {! Candidate__c.Active__c} <br/>
+                Position: {! Candidate__c.Position__r.Name} <br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Edit Data">
+            <apex:pageBlockSection collapsible="true" columns="1">
+                <apex:inputField value="{!Candidate__c.Name}"/>
+                <apex:inputField value="{!Candidate__c.Email__c}"/>
+                <apex:inputField value="{!Candidate__c.Phone__c}"/>
+                <apex:inputField value="{!Candidate__c.Status__c}"/>
+                <apex:inputField value="{!Candidate__c.Active__c}"/>
+                <apex:inputField value="{!Candidate__c.Position__r.Name}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!QuickSave}"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

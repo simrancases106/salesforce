@@ -1,0 +1,19 @@
+<apex:page controller="PositionViewController">
+    <apex:form id="Edpsn">
+        <apex:pageBlock title="Positions">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!Positions}" var="pos">
+                    <apex:column headerValue="Id">
+                        <apex:outputLink value="/{!pos.Id}">{!pos.Id}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!pos.Name}"/>
+                    <apex:column value="{!pos.Job_Campaign__r.Name}"/>
+                    <apex:column headerValue="Assignee" value="{!pos.Assignee__r.Name}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:commandButton value="First Page" action="{!FirstPage}" disabled="{!prev}"/>
+            <apex:commandButton value="Previous" action="{!previous}" disabled="{!prev}"/>
+            <apex:commandButton value="Next" action="{!next}" disabled="{!nxt}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

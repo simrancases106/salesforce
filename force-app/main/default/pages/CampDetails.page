@@ -1,0 +1,20 @@
+<apex:page controller="CampController" extensions="CampExtention">
+    <apex:form id="svcmp">
+        <apex:pageBlock >
+            <apex:pageMessages id="showmsg"></apex:pageMessages>
+            <apex:pageBlockSection title="New Campaign" >
+                <apex:inputField value="{! camp.Name}" label="Name"/> <br/>
+                <apex:inputField value="{! camp.Description__c}" label="Description"/> <br/>
+                <apex:inputField value="{! camp.Active__c}" label="Active"/>
+                <apex:commandButton value="Submit" action="{!SaveCampaign}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageBlock >
+    	<apex:pageBlockTable title="Campaigns" value="{!Campaigns}" var="c">
+        	<apex:column value="{!c.Name}"/>
+            <apex:column value="{!c.Description__c}"/>
+            <apex:column value="{!c.Active__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

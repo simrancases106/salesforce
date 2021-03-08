@@ -1,0 +1,9 @@
+<apex:page controller="CampBatchController">
+    <apex:form >
+    	<apex:pageBlock >
+        	Field : <apex:inputText value="{!field}"/>
+            Value : <apex:inputText value="{!value}"/>
+           	<apex:commandButton value="Submit" action="{!updateCamp}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
