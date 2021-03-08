@@ -2,7 +2,7 @@ public class batch_class implements Database.Batchable<SObject>{
     String field;
     String query;
     String value;
-    
+    //vscodechange
     public batch_class(String f, String q, String v) {
         field =f; query =q; value =v;
     }
